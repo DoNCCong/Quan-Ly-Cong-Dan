@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="QuanLyCDTP.FHoChieu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ui="clr-namespace:QuanLyCDTP"
+             xmlns:local="clr-namespace:QuanLyCDTP"
+             Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             mc:Ignorable="d" 
+             >
+    <Grid x:Name="gdangky" Visibility="Visible">
+        <Border  Background="#eae8f3" CornerRadius="60">
+            <Grid VerticalAlignment="Top" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="55"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="520"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+               
+                <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,10,0,0" Grid.Column="0">
+                    <Image Source="/Source/Window/picture/hochieudep.jpg" Height="50"  HorizontalAlignment="Center" Width="54"></Image>
+                    <TextBlock Text="Hộ Chiếu" Style="{StaticResource MenuButtonText}" FontSize="19" Foreground="LightSeaGreen" FontWeight="Bold" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
+
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <TextBlock  Text="ID :" FontWeight="Bold" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" />
+                    <ui:InfoCard   Width="40" Grid.Row="2"  Margin="40,0,20,5" x:Name="maso" KeyDown="maso_KeyDown"/>
+                    <TextBlock  Text="Họ và Tên :"  Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Width="77" />
+                    <ui:InfoCard   Width="185" Grid.Row="2"  Margin="10,0,20,5" x:Name="name" />
+                </StackPanel>
+                <StackPanel  Grid.Row="3" Orientation="Horizontal" >
+                    <TextBlock  Text="giới tính: " Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" />
+                    <ui:InfoCard MinWidth="50"   Margin="0,0,20,5" x:Name="gioitinh"/>
+                    <TextBlock  Text="Ngày tháng năm sinh" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10,10,10,10" />
+                    <DatePicker Width="150" Margin="0,9,20,0" x:Name="date"></DatePicker>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Orientation="Horizontal">
+                    <TextBlock  Text="Địa Chỉ :" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" />
+                    <ui:InfoCard MinWidth="95"  Margin="0,0,20,5" x:Name="diachi"/>
+                    <StackPanel Orientation="Horizontal"  Grid.Row="4">
+                        <TextBlock  Text="Ngày Cấp: " Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black"  Margin="-10,0,20,5" Width="76"/>
+                        <DatePicker Margin="0,0,20,0" x:Name="ngaycap" Width="103"></DatePicker>
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Grid.Row="5"  Text="Nơi Cấp:" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" VerticalAlignment="Top" Height="22" Margin="35,12,10,0" />
+                <ui:InfoCard Grid.Row="4"   Margin="120,30,170,5" x:Name="noicap" Grid.RowSpan="2"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="6">
+                    <TextBlock x:Name="sodoc" Text="Số Hộ Chiếu:" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" VerticalAlignment="Center" />
+                    <ui:InfoCard Width="297" Margin="10,0,20,5" x:Name="sohochieu"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="7">
+                    <TextBlock Text="Số Điện Thoại:" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" VerticalAlignment="Center" />
+                    <ui:InfoCard Width="300"  Margin="2,0,20,5" x:Name="sodienthoai"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,10,0,0" Grid.Column="1">
+                    <Image Source="/Source/Window/picture/hochieudep.jpg" Height="50"  HorizontalAlignment="Center" Width="54"></Image>
+                    <TextBlock Text="Lịch Sử Đi Lại" Style="{StaticResource MenuButtonText}" FontSize="19" Foreground="LightSeaGreen" FontWeight="Bold" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Grid.Row="2">
+                    <TextBlock  Text="Số Thứ Tự:" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" />
+                    <ui:InfoCard  Width="40" Margin="40,0,20,5" x:Name="stt" KeyDown="stt_KeyDown" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Grid.Row="3">
+                    <TextBlock  Text="ID :" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" />
+                    <ui:InfoCard Width="40" Margin="40,0,20,5" x:Name="id" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Grid.Row="4">
+                    <TextBlock  Text="Ngày Đi :" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" />
+                    <DatePicker Width="150" Margin="20,0,20,0" x:Name="ngaydi"></DatePicker>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Grid.Row="5">
+                    <TextBlock  Text="Ngày Về :" Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Grid.ColumnSpan="2" Margin="30,8,0,0" />
+                    <DatePicker Width="150"  Margin="17,8,20,0" x:Name="ngayve"></DatePicker>
+                </StackPanel>
+
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Grid.Row="6">
+                    <TextBlock  Text="Nơi Đến :"  Style="{StaticResource MenuButtonText}" FontSize="16" Foreground="Black" Width="77" />
+                    <ui:InfoCard Width="185"  Margin="10,0,20,5" x:Name="noiden" />
+                </StackPanel>
+                <Button Grid.Row="8" x:Name="btnXoa" Style="{StaticResource BottomMenuButton}"  Click="btnXoa_Click" Content="Xoá" HorizontalAlignment="Left" Margin="328,8,0,17" Width="80"/>
+                <Button Grid.Row="8" x:Name="btnDKHoChieu" Style="{StaticResource BottomMenuButton}"  Click="btnDKHoChieu_Click" Content="Đăng Ký" HorizontalAlignment="Left" Margin="220,8,0,17" Width="80"/>
+                <Button Grid.Row="8" x:Name="btnSua" Style="{StaticResource BottomMenuButton}"  Click="btnSua_Click" Content="Sửa" Margin="117,8,0,17" Width="80" HorizontalAlignment="Left"/>
+                <Button Grid.Row="8" x:Name="btnxoatext" Style="{StaticResource BottomMenuButton}"  Click="btnxoatext_Click" Content="Làm Sạch" HorizontalAlignment="Left" Margin="20,8,0,17" Width="80" RenderTransformOrigin="0.023,-0.133"/>
+                <Button Grid.Row="8" x:Name="btnXoate" Style="{StaticResource BottomMenuButton}"  Click="btnXoate_Click" Content="Làm Sạch" HorizontalAlignment="Left" Margin="196,8,0,17" Width="80" Grid.Column="1"/>
+                <Button Grid.Row="8" x:Name="btnthemlt" Style="{StaticResource BottomMenuButton}"  Click="btnthemlt_Click" Content="Đăng Ký" HorizontalAlignment="Left" Margin="10,8,0,17" Width="80" Grid.Column="1"/>
+                <Button Grid.Row="8" x:Name="btnXoalt" Style="{StaticResource BottomMenuButton}"  Click="btnXoalt_Click" Content="Xoá" HorizontalAlignment="Left" Margin="292,8,0,17" Width="80" Grid.Column="1"/>
+                <Button Grid.Row="8" x:Name="btnsualt" Style="{StaticResource BottomMenuButton}"  Click="btnsualt_Click" Content="Sửa" HorizontalAlignment="Left" Margin="100,8,0,17" Width="80" Grid.Column="1"/>
+
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
